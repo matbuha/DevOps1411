@@ -23,3 +23,4 @@ if result == True:
 result = check_input(2, "enter  your amount of pets: ")
 if result == True:
     print("amount of pets is ok")
+
