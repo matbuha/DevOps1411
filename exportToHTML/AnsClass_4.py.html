@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>AnsClass_4.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #6a8759;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+AnsClass_4.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># 1.</span>
+<span class="s2">from </span><span class="s1">selenium </span><span class="s2">import </span><span class="s1">webdriver</span>
+<span class="s2">from </span><span class="s1">selenium.webdriver.chrome.options </span><span class="s2">import </span><span class="s1">Options</span>
+
+<span class="s1">my_driver = webdriver.Chrome(executable_path=</span><span class="s3">&quot;C:/Users/UserPc/Desktop/deveops/chromedriver_win32/chromedriver.exe&quot;</span><span class="s1">)</span>
+<span class="s1">my_driver.get(</span><span class="s3">&quot;http://www.walla.co.il&quot;</span><span class="s1">)</span>
+<span class="s1">my_driver.get(</span><span class="s3">&quot; http://www.ynet.co.il&quot;</span><span class="s1">)</span>
+<span class="s1">sleep(</span><span class="s4">3</span><span class="s1">)</span>
+<span class="s1">my_driver.close()</span>
+
+<span class="s0"># 2.</span>
+<span class="s1">my_title = my_driver.title</span>
+<span class="s1">my_driver.refresh()</span>
+<span class="s2">if </span><span class="s1">my_title == my_driver.title:</span>
+    <span class="s1">print(</span><span class="s3">&quot;yesssssss!&quot;</span><span class="s1">)</span>
+
+
+<span class="s0"># 3. yes they're the same</span>
+
+<span class="s0"># 4.</span>
+<span class="s1">my_driver.get(</span><span class="s3">&quot;https://translate.google.com&quot;</span><span class="s1">)</span>
+<span class="s1">my_driver.find_element_by_xpath(</span><span class="s3">&quot;//textarea[@aria-label='טקסט מקור']&quot;</span><span class="s1">).send_keys(</span><span class="s3">&quot;שלום לכם&quot;</span><span class="s1">)</span>
+
+<span class="s0"># 5.</span>
+<span class="s1">my_driver.get(</span><span class="s3">&quot;https://www.youtube.com/&quot;</span><span class="s1">)</span>
+<span class="s1">sleep(</span><span class="s4">1</span><span class="s1">)</span>
+<span class="s1">my_driver.find_element_by_xpath(</span><span class="s3">&quot;//input[@id='search']&quot;</span><span class="s1">).send_keys(</span><span class="s3">&quot;nora en pure&quot;</span><span class="s1">)</span>
+<span class="s1">my_driver.find_element_by_xpath(</span><span class="s3">&quot;//button[@id='search-icon-legacy']&quot;</span><span class="s1">).click()</span>
+
+<span class="s0"># 6.</span>
+<span class="s1">my_driver.get(</span><span class="s3">&quot;https://translate.google.com&quot;</span><span class="s1">)</span>
+<span class="s1">a = my_driver.find_element_by_xpath(</span><span class="s3">&quot;/html/body/c-wiz/div/div[2]/c-wiz/div[2]/c-wiz/div[1]/div[2]/div[3]/c-wiz[1]/span/span/div/textarea&quot;</span><span class="s1">)</span>
+<span class="s1">b = my_driver.find_element_by_class_name(</span><span class="s3">&quot;er8xn&quot;</span><span class="s1">)</span>
+<span class="s1">c = my_driver.find_element_by_xpath(</span><span class="s3">&quot;//textarea[@aria-label='טקסט מקור']&quot;</span><span class="s1">)</span>
+<span class="s1">print(a)</span>
+
+<span class="s0"># 7.</span>
+<span class="s1">my_driver.get(</span><span class="s3">&quot;https://www.facebook.com&quot;</span><span class="s1">)</span>
+<span class="s1">my_driver.find_element_by_xpath(</span><span class="s3">&quot;//input[@id='email']&quot;</span><span class="s1">).send_keys(</span><span class="s3">&quot;EMAIL&quot;</span><span class="s1">)</span>
+<span class="s1">my_driver.find_element_by_xpath(</span><span class="s3">&quot;//input[@id='pass']&quot;</span><span class="s1">).send_keys(</span><span class="s3">&quot;PASSWORD&quot;</span><span class="s1">)</span>
+<span class="s1">my_driver.find_element_by_xpath(</span><span class="s3">'//*[@id=&quot;u_0_d_Q9&quot;]'</span><span class="s1">).click()</span>
+
+<span class="s0"># 8.</span>
+<span class="s1">my_driver.get(</span><span class="s3">&quot;chrome://settings/clearBrowserData&quot;</span><span class="s1">)</span>
+<span class="s1">my_driver.find_element_by_xpath(</span><span class="s3">'//*[@id=&quot;clearBrowsingDataConfirm&quot;]'</span><span class="s1">).click()</span>
+<span class="s1">sleep(</span><span class="s4">10</span><span class="s1">)</span>
+<span class="s1">print(</span><span class="s3">&quot;all cookies stored in the browser&quot;</span><span class="s1">)</span>
+
+<span class="s0"># 9.</span>
+<span class="s1">my_driver.get(</span><span class="s3">&quot;https://github.com&quot;</span><span class="s1">)</span>
+<span class="s1">my_driver.find_element_by_xpath(</span><span class="s3">&quot;//input[@placeholder='Search GitHub']&quot;</span><span class="s1">).send_keys(</span><span class="s3">&quot;Selenium&quot;</span><span class="s1">)</span>
+<span class="s1">my_driver.find_element_by_xpath(</span><span class="s3">&quot;//input[@placeholder='Search GitHub']&quot;</span><span class="s1">).submit()</span>
+
+<span class="s0"># 10.</span>
+<span class="s1">chrome_options = Options()</span>
+<span class="s1">chrome_options.add_argument(</span><span class="s3">&quot;--disable-extensions&quot;</span><span class="s1">)</span>
+<span class="s1">browser = webdriver.Chrome(executable_path=my_driver</span><span class="s2">, </span><span class="s1">chrome_options=chrome_options)</span>
+<span class="s1">url = </span><span class="s3">'https://wwww.test.com/'</span>
+<span class="s1">browser.get(url)</span>
+</pre>
+</body>
+</html>
